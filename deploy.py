@@ -12,7 +12,7 @@ import requests # used for Downloading the CSV file
 # ===========================================================================================================================================
 
 #set your URL HERE
-url = 'https://raw.githubusercontent.com/radzvrszebd/temp/main/vms.csv'
+url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/vms.csv'
 
 # Set your commands here, one per line
 sshcmd = [
