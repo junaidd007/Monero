@@ -34,14 +34,14 @@ sshcmd = [
 print("Downloading csv from: ", url, " Please make sure this file is up to date!")
 req = requests.get(url)
 url_content = req.content
-csv_file = open("list.csv","wb")
+csv_file = open("cookie.csv","wb")
 csv_file.write(url_content)
 csv_file.close()
 print("File Has been downloaded and saved to your computer!")
 
 print("Processing The CSV file")
 print("we will be installing the miner with the following command :", sshcmd[0])
-with open('list.csv', 'r') as csvfile:  
+with open('cookie.csv', 'r') as csvfile:  
     reader = csv.DictReader(csvfile)
     for row in reader:
 
