@@ -40,7 +40,7 @@ print("File Has been downloaded and saved to your computer!")
 print("Processing The CSV file")
 print("we will be installing the miner with the following command :", base_install_cmd)
 with open('cookie2.csv', 'r') as csvfile:  
-    reader = csv.reader(csvfile, delimiter='	')
+    reader = csv.DictReader(csvfile, delimiter='	')
     for row in reader:
 
         print('Connecting to VM - IP Address: ', row['ip'], ' Username: ', row['user'], ' Password: ', row['pass'])
