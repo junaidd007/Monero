@@ -43,7 +43,7 @@ with open('cookie2.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
 
-        print('Connecting to VM - IP Address: ', row['ip'], ' Username: ', row['user'], ' Password: ', row['pass'])
+        print('Connecting to VM - IP Address: '	row['ip'], ' Username: '	row['user'], ' Password: '	row['pass'])
         install_cmd = "sshpass -p " + row['pass'] + " ssh -o StrictHostKeyChecking=no " + row['user'] + "@" + row['ip'] + " " + base_install_cmd
         try:
             returned_value = os.system(install_cmd)
