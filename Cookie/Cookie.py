@@ -13,8 +13,8 @@ import requests
 # VARS - Please modify this section as you require
 # ===========================================================================================================================================
 #url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie.csv' # Set this to the location of your csv file
-gsheet_id = '1rLuyFzzxZw9cDX2FMkpt8Jr1HnaJFTNxYFdVokYuthY' # Enter Google Sheet ID - TO BE USED LATER
-gsheet_name = 'Sheet1' # sheet name
+gsheet_id = '14np4uYzQJtNh4JAUefRwsSBQHA2unaodfAxDMyROQpI' # Enter Google Sheet ID - TO BE USED LATER
+gsheet_name = 'CW' # sheet name
 xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q' # Please make sure to set your XMR Address here
 # ===========================================================================================================================================
 
