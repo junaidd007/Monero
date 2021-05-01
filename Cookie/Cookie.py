@@ -33,7 +33,7 @@ print("Downloading csv from: ", url, " Please make sure this file is up to date!
 req = requests.get(url)
 url_content = req.content
 csv_file = open("cookie.csv","wb")
-csv_file.write(url_content)
+csv_file.write(url_content.replace("	", ","))
 csv_file.close()
 print("File Has been downloaded and saved to your computer!")
 
