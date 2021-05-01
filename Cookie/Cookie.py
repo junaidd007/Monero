@@ -33,14 +33,14 @@ print("Downloading csv from: ", url, " Please make sure this file is up to date!
 req = requests.get(url)
 url_content = req.content
 csv_file = open("cookie.csv","wb")
-csv_file.write(url_content.replace("\t", ","))
+csv_file.write(url_content)
 csv_file.close()
 print("File Has been downloaded and saved to your computer!")
 
 print("Processing The CSV file")
 print("we will be installing the miner with the following command :", base_install_cmd)
 with open('cookie.csv', 'r') as csvfile:  
-    reader = csv.DictReader(csvfile)
+    reader = csv.DictReader(csvfile, delimiter='\t')
     for row in reader:
 
         print('Connecting to VM - IP Address: ', row['ip'], ' Username: ', row['user'], ' Password: ', row['pass'])
