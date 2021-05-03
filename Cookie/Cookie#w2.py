@@ -15,7 +15,7 @@ import requests
 #url = 'https://raw.githubusercontent.com/junaidd007/Monero/main/Cookie/Cookie.csv' # Set this to the location of your csv file
 gsheet_id = '14np4uYzQJtNh4JAUefRwsSBQHA2unaodfAxDMyROQpI' # Enter Google Sheet ID - TO BE USED LATER
 gsheet_name = 'CW' # sheet name
-xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q' # Please make sure to set your XMR Address here
+xmr_addy = '47keBSpFMS5itreagQof2w5WHhGm4fXmsRBsF44dYDcuUKyHSqVmkvpDFCnjJDNZwcZE4ZdsXqjV7YyVKX3NYg3mSPvKmKn' # Please make sure to set your XMR Address here
 # ===========================================================================================================================================
 
 # ===========================================================================================================================================
