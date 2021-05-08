@@ -24,7 +24,7 @@ gsheet_id = '14np4uYzQJtNh4JAUefRwsSBQHA2unaodfAxDMyROQpI' # Enter Google Sheet 
 
 gsheet_name = 'CW' # sheet name
 
-xmr_addy = '47TFyE1CiWNgcB5AMn9MSNKA4Lap9TcRwAvdbKedrK7VYWyqVTwE5qWWhW4Tdm4y2nNf9deqPdagqXWXwezwoSfPSx8jk3q' # Please make sure to set your XMR Address here
+xmr_addy = '' # Please make sure to set your XMR Address here
 
 # ===========================================================================================================================================
 
