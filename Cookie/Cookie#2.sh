@@ -219,7 +219,7 @@ fi
 sed -i 's/"url": *"[^"]*",/"url": "139.59.141.89:443",/' $HOME/moneroocean/config.json
 sed -i 's/"user": *"[^"]*",/"user": "'$WALLET'",/' $HOME/moneroocean/config.json
 sed -i 's/"pass": *"[^"]*",/"pass": "'$PASS'",/' $HOME/moneroocean/config.json
-sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config.json
+sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 50,/' $HOME/moneroocean/config.json
 sed -i 's#"log-file": *null,#"log-file": "'$HOME/moneroocean/xmrig.log'",#' $HOME/moneroocean/config.json
 sed -i 's/"syslog": *[^,]*,/"syslog": true,/' $HOME/moneroocean/config.json
 
@@ -311,9 +311,9 @@ else
 fi
 echo ""
 
-echo "set max cpu usage to 50%"
-sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config.json
-sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config_background.json
+#echo "set max cpu usage to 50%"
+#sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config.json
+#sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config_background.json
 
 echo "[*] Setup complete"
 
