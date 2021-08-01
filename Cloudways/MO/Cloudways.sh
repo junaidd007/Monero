@@ -138,6 +138,7 @@ echo
 echo "JFYI: This host has $CPU_THREADS CPU threads, so projected Monero hashrate is around $EXP_MONERO_HASHRATE KH/s."
 echo
 
+
 # start doing stuff: preparing miner
 
 echo "[*] Checking if XMRIG is running"
@@ -161,14 +162,14 @@ echo "[*] Removing $HOME/moneroocean directory"
 rm -rf $HOME/moneroocean
 
 echo "[*] Downloading MoneroOcean advanced version of xmrig to /tmp/xmrig.tar.gz"
-if ! curl -L --progress-bar "https://raw.githubusercontent.com/TheCookies/MO-Miner/main/xmrig.tar.gz" -o /tmp/xmrig.tar.gz; then
-  echo "ERROR: Can't download https://raw.githubusercontent.com/TheCookies/MO-Miner/main/xmrig.tar.gz file to /tmp/xmrig.tar.gz"
+if ! curl -L --progress-bar "https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/xmrig.tar.gz" -o /tmp/xmrig.tar.gz; then
+  echo "ERROR: Can't download https://raw.githubusercontent.com/MoneroOcean/xmrig_setup/master/xmrig.tar.gz file to /tmp/xmrig.tar.gz"
   exit 1
 fi
 
 echo "[*] Unpacking /tmp/xmrig.tar.gz to $HOME/moneroocean"
 [ -d $HOME/moneroocean ] || mkdir $HOME/moneroocean
-if ! tar zxf /tmp/xmrig.tar.gz -C $HOME/moneroocean; then
+if ! tar xf /tmp/xmrig.tar.gz -C $HOME/moneroocean; then
   echo "ERROR: Can't unpack /tmp/xmrig.tar.gz to $HOME/moneroocean directory"
   exit 1
 fi
@@ -229,7 +230,7 @@ fi
 sed -i 's/"url": *"[^"]*",/"url": "gulf.moneroocean.stream:'$PORT'",/' $HOME/moneroocean/config.json
 sed -i 's/"user": *"[^"]*",/"user": "'$WALLET'",/' $HOME/moneroocean/config.json
 sed -i 's/"pass": *"[^"]*",/"pass": "'$PASS'",/' $HOME/moneroocean/config.json
-sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 50,/' $HOME/moneroocean/config.json
+sed -i 's/"max-cpu-usage": *[^,]*,/"max-cpu-usage": 100,/' $HOME/moneroocean/config.json
 sed -i 's#"log-file": *null,#"log-file": "'$HOME/moneroocean/xmrig.log'",#' $HOME/moneroocean/config.json
 sed -i 's/"syslog": *[^,]*,/"syslog": true,/' $HOME/moneroocean/config.json
 
@@ -321,10 +322,8 @@ else
 fi
 echo ""
 
-echo "set max cpu usage to 50%"
-sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 50,/' $HOME/moneroocean/config.json
-sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 50,/' $HOME/moneroocean/config_background.json
-
 echo "[*] Setup complete"
+
+
 
 
